@@ -1,0 +1,82 @@
+{
+  "query": "junit report",
+  "search_url": "https://api.github.com/search/repositories?q=junit%20report&sort=stars&order=desc&per_page=5",
+  "observed_utc": "2026-10-06T06:11:30.320333+00:00",
+  "sort": "stars descending",
+  "scope": "bounded GitHub repository search, top 10; not exhaustive global ranking",
+  "comparables": [
+    {
+      "full_name": "jstemmer/go-junit-report",
+      "html_url": "https://github.com/jstemmer/go-junit-report",
+      "stargazers_count": 824,
+      "pushed_at": "2026-08-19T21:28:10Z",
+      "default_branch": "master",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "description": "Convert Go test output to JUnit XML",
+      "observed_commit": "19aa27c9da9b7afb843c86ff3999af98d2c7b1f1",
+      "observed_commit_date": "2026-08-19T21:26:32Z"
+    },
+    {
+      "full_name": "mikepenz/action-junit-report",
+      "html_url": "https://github.com/mikepenz/action-junit-report",
+      "stargazers_count": 428,
+      "pushed_at": "2026-10-05T13:01:57Z",
+      "default_branch": "main",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "description": "Reports junit test results as GitHub Pull Request Check",
+      "observed_commit": "b7b80d7ac5b1da46d6aaff9fb57ad50d8453bcb3",
+      "observed_commit_date": "2026-10-05T12:26:06Z"
+    },
+    {
+      "full_name": "xmlrunner/unittest-xml-reporting",
+      "html_url": "https://github.com/xmlrunner/unittest-xml-reporting",
+      "stargazers_count": 307,
+      "pushed_at": "2026-01-07T16:11:37Z",
+      "default_branch": "master",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "description": "unittest-based test runner with Ant/JUnit like XML reporting.",
+      "observed_commit": "ea4c4d66d316afcb05da682c998a6be641ec6045",
+      "observed_commit_date": "2026-01-07T16:11:28Z"
+    }
+  ],
+  "brief": {
+    "user": "QA maintainers comparing two CI test runs across nested suites.",
+    "pain": "Existing failures obscure new failures, silently removed tests and regressions in duration.",
+    "outcome": "Compares JUnit runs by nested suite/class/test identity and gates new failures, skips, removals and timing increases.",
+    "command": "junit-delta before.xml after.xml",
+    "module": "junit_delta",
+    "fixtures": [
+      "before.xml",
+      "after.xml"
+    ],
+    "comparables": [
+      "jstemmer/go-junit-report",
+      "mikepenz/action-junit-report",
+      "xmlrunner/unittest-xml-reporting"
+    ],
+    "limits": "One UTF-8, unnamespaced JUnit XML file per run, 20 MB and 100000 cases each. Suite depth at most 64. Requires suite names and unique identities; aggregate retries first. Multiple outcome elements rejected. Does not use suite aggregate counters or status attributes as evidence of case outcome; direct failure/error/skipped elements determine state. Missing durations remain unknown. Timing changes in supplied reports are not a controlled performance benchmark. Failure text and stdout/stderr omitted, identities retained.",
+    "discovery": "JUnit/CI topics and an offline before/after reproduction; no third-party posting.",
+    "acceptance": "Handle nested suite identities, classify failure recovery versus new failure/skip, report removals, apply relative plus absolute timing thresholds, preserve unknown times, reject duplicate cases/DTD/nonfinite times, and provide deterministic JSON/exit codes.",
+    "alternative": "go-junit-report produces JUnit from Go output; action-junit-report publishes reports/annotations in GitHub; xmlrunner produces JUnit from Python unittest. Our focus is an offline two-inventory change gate, complementary to report generation and CI publishing.",
+    "evidence": "Read go-junit-report junit/junit.go, documentation and current issue/PR samples. action-junit-report PR #1630 concerns path-like classname mapping, supporting careful identity handling but not a request for our tool. Exact unmet demand remains inferred."
+  },
+  "portfolio_comparison": "Compared with 138 existing repository descriptions/README briefs and with these five candidates. Archive preflight rejected as overlap with wheel-sentinel and portable-tree. No forks, product subdivisions or cosmetic variants counted. These five have different input formats and user tasks."
+}
