@@ -1,0 +1,1 @@
+<testsuites><testsuite name="checkout"><testcase classname="api" name="happy path" time="0.2"/><testcase classname="api" name="retry" time="0.4"/></testsuite></testsuites>
