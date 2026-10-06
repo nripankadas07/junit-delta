@@ -30,3 +30,5 @@ remote checks pass. No cross-tool performance benchmark or user/adoption results
 
 The intentionally failing installed fixture exited 1, demonstrating the gate.
 Timing changes depend on supplied report measurements; removed tests gate by default and duplicate identities are rejected.
+
+Remote CI on Python 3.11 exposed preinstalled setuptools 79.0.1 (PYSEC-2026-3447). The build requirement and CI bootstrap now require setuptools >=83; the vulnerability gate remains enabled. Remote verification of this correction is required before LIVE.
